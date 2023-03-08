@@ -34,4 +34,4 @@ If you use Quarto in your everyday research workflow, it will be a quick transit
 
 ## Preview the Final Product
 
-The article I created from the template can be previewed [here](https://github.com/jennalandy/remodel-your-qmd/my_elsevier_article/my_elsevier_article.pdf).
+The article I created from the template can be previewed [here](https://github.com/jennalandy/remodel-your-qmd/blob/master/my_elsevier_article/my_elsevier_article.pdf).
