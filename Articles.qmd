@@ -1,0 +1,37 @@
+---
+title: "Writing Articles with Quarto"
+---
+
+## Setting Up Template
+
+Quarto provides [templates](https://quarto.org/docs/journals/) for many popular journals (PLOS, ASA, Elsevier, ...).
+
+1.  Set up a article with a journal template in your terminal:
+
+        quarto use template quarto-journals/elsevier
+
+2.  It will ask you what to call the sub-directory for your article files:
+
+        Directory name: › my_elsevier_article
+
+3.  *One small change* --- add the line `pdf: default` in the YAML for it to compile without error:
+
+    ![](images/image-98481140.png){width="216"}
+
+## Writing Your Article
+
+When writing your article in Qaurto, you can use
+
+-   **markdown** (headers with `#`, bold with `**`, italics with `*`, etc.)
+
+-   **citations and cross references** (with `@`)
+
+-   **LaTeX formulas** (with single or double dollar signs `$$`)
+
+-   **R code to include plots and tables**
+
+If you use Quarto in your everyday research workflow, it will be a quick transition to writing a paper with Quarto.
+
+## Preview the Final Product
+
+The article I created from the template can be previewed [here](https://github.com/jennalandy/remodel-your-qmd/my_elsevier_article/my_elsevier_article.pdf).

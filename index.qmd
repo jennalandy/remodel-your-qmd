@@ -1,0 +1,15 @@
+---
+title: "Introduction"
+format: html
+editor: visual
+---
+
+These materials are intended as part of a training session on document preparation with Quarto and Rmd in RStudio.
+
+The session will start by introducing RStudio, setting up a R project, creating a Quarto document, defining the YAML, and a orientation to formatting options and adding code.
+
+I will present the materials of the website side by side with the `.qmd` files in RStudio. The materials go through useful features for preparing documents in RStudio:
+
+1.  Packages for pretty tables and animated plots
+2.  Making the final product prettier and easier to navigate with themes, references, table of contents, etc.
+3.  How to use Quarto to write a full journal article.

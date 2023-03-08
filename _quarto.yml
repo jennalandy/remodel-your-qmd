@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "Document preparation with Quarto and R Markdown"
+  author: "Jenna Landy"
+  date: "03/08/2022"
+  page-navigation: true
+  navbar:
+    search: true
+    right:
+      - icon: github
+        href: https://github.com/jennalandy/remodel-your-qmd
+        aria-label: GitHub
+  chapters:
+    - index.qmd
+    - Tables_and_Plots.qmd
+    - Reports_and_Themes.qmd
+    - Articles.qmd
+
+format:
+  html:
+    theme: journal
+    number-sections: true
+    toc: true
+    fontsize: 14px

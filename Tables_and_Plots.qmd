@@ -1,0 +1,163 @@
+---
+title: "Tables and Plots"
+format: html
+editor: visual
+---
+
+```{r message = FALSE}
+library(gapminder) # provides gapminder dataset
+library(tidyverse)
+library(ggplot2)
+
+library(plotly) # for interactive plots
+library(gganimate) # for animated plots
+library(knitr) # for kable tables
+library(kableExtra) # for even prettier kable tables
+library(tableone) # for baseline characteristics table
+```
+
+## `gapminder` dataset
+
+Country-specific data from 1952 to 2007 with the following variables: **country**, **continent**, **year**, **lifeExp**, **pop**, and **gdpPercap**.
+
+## Tables
+
+#### Base R `table` Function or Manual Data Manipulation
+
+```{r}
+table(gapminder$continent)
+```
+
+```{r}
+gapminder %>%
+  dplyr::select(-c(country, year)) %>%
+  dplyr::group_by(continent) %>%
+  dplyr::summarize_all(mean)
+```
+
+#### Kable tables
+
+1.  Bootstrap Theme
+
+    ```{r}
+    t(table(gapminder$continent)) %>%
+      kableExtra::kbl() %>%
+      kableExtra::kable_styling()
+    ```
+
+2.  Paper theme
+
+    ```{r}
+    t(table(gapminder$continent)) %>%
+      kableExtra::kbl() %>%
+      kableExtra::kable_paper(
+        "hover", full_width = F
+      )
+    ```
+
+3.  Classic theme
+
+    ```{r}
+    t(table(gapminder$continent)) %>%
+      kableExtra::kbl() %>%
+      kableExtra::kable_classic(
+        full_width = F,
+        position = 'left'
+      )
+    ```
+
+#### Table One
+
+1.  Basic Baseline Characteristics
+
+    ```{r}
+    tab = tableone::CreateTableOne(
+      data = gapminder,
+      vars = c('continent','lifeExp','pop','gdpPercap')
+    )
+
+    tab
+    ```
+
+    ```{r}
+    summary(tab)
+    ```
+
+2.  Stratify Table
+
+    ```{r}
+    tab2 = tableone::CreateTableOne(
+      data = gapminder,
+      vars = c('lifeExp','pop','gdpPercap'),
+      strata = 'continent'
+    )
+    tab2
+    ```
+
+3.  Save Table
+
+    ```{r}
+    tab2_mat = print(tab2, quote = FALSE, nospaces = TRUE, printToggle = FALSE)
+    write.csv(tab2_mat, file = "myTableOne.csv")
+    ```
+
+4.  Copy Table into LaTeX document
+
+    ```{r}
+    knitr::kable(tab2_mat, format = 'latex')
+    ```
+
+## Figures
+
+This example builds upon one on the [gganimate website](https://gganimate.com/)
+
+#### `ggplot` plot: we can't tell which year is which!
+
+```{r}
+plot1 = ggplot2::ggplot(
+  gapminder, 
+  aes(
+    x = gdpPercap, 
+    y = lifeExp, 
+    size = pop, 
+    color = country, 
+    text = paste('Year:',year)
+  )
+) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  labs(
+    title = 'Year: {frame_time}', 
+    x = 'GDP per capita', 
+    y = 'life expectancy'
+  )
+
+plot1
+```
+
+#### `plotly`: we can hover to identify points for each country/year
+
+**Note**: Only variables in `aes()` show up in the tooltip by default. A trick I used here is to add a `text` aesthetic with the year information. Even though we never use a geometry that looks at that value, it's added to the tooltip!
+
+```{r}
+plotly::ggplotly(plot1)
+```
+
+#### `gganimate`: visually see data move over the years
+
+**Basics of `gganimate`**:
+
+-   `transition_time()` , `transition_states()`:how the data should be spread out across time
+
+-   `enter_*()`, `exit_*()`: how new data should appear and old data should disappear (e.g. fade in, shrink out)
+
+Note: you need to install `gifski` and `png` packages before running the code below.
+
+```{r}
+plot1 +
+  transition_time(year) +
+  ease_aes('linear')
+```

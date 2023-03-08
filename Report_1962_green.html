@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.1.251" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+
+<title>Reports and Themes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<!-- htmldependencies:E3FAD763 -->
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reports and Themes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#themes" id="toc-themes">Themes</a></li>
+  <li><a href="#table-of-contents" id="toc-table-of-contents">Table of Contents</a></li>
+  <li><a href="#quick-and-easy-citations" id="toc-quick-and-easy-citations">Quick and Easy Citations</a></li>
+  <li><a href="#parameterized-plot" id="toc-parameterized-plot">Parameterized Plot</a></li>
+  <li><a href="#parameterized-analysis" id="toc-parameterized-analysis">Parameterized Analysis</a></li>
+  <li><a href="#tabs-for-multiple-tables" id="toc-tabs-for-multiple-tables">Tabs for Multiple Tables</a></li>
+  </ul>
+</nav>
+<div class="cell">
+
+</div>
+<section id="themes" class="level2">
+<h2>Themes</h2>
+<ul>
+<li><p>This document uses the <code>united</code> theme, specified by <code>theme: united</code> in the YAML</p></li>
+<li><p><a href="https://quarto.org/docs/output-formats/html-themes.html">quarto themes</a> to change the style of your report.</p></li>
+<li><p><a href="https://quarto.org/docs/reference/formats/html.html">other format options</a> for HTML reports.</p></li>
+</ul>
+</section>
+<section id="table-of-contents" class="level2">
+<h2>Table of Contents</h2>
+<ul>
+<li>Make your report easier to navigate with one line! Add <code>toc: true</code> in YAML.</li>
+</ul>
+</section>
+<section id="quick-and-easy-citations" class="level2">
+<h2>Quick and Easy Citations</h2>
+<section id="benefits" class="level4">
+<h4>Benefits</h4>
+<ul>
+<li><p>No switching between your document and the <code>.bib</code> file</p></li>
+<li><p>No searching for <code>bibTex</code> citations to copy and paste</p></li>
+</ul>
+</section>
+<section id="creating-a-bibtex-citation" class="level4">
+<h4>Creating A Bibtex Citation</h4>
+<ol type="1">
+<li><p>To cite <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1977.tb01600.x">this paper</a>, we can copy the doi (number or full link), and paste it in following an <code>@</code> sign</p>
+<p><code>@10.1111/j.2517-6161.1977.tb01600.x</code></p></li>
+<li><p>You’ll see a pop-up window like this:</p>
+<p><img src="images/image-1597336925.png" class="img-fluid" width="318" /></p></li>
+<li><p>Quarto turns it into this: <code>@dempster1977</code></p></li>
+<li><p>Quarto also adds <code>bibliography: references.bib</code> to YAML</p></li>
+</ol>
+</section>
+<section id="citing-in-your-report" class="level4">
+<h4>Citing in Your Report</h4>
+<ul>
+<li><p>For an in-text citation, leave it as is: <code>@dempster1977</code> <span class="math inline">\(\rightarrow\)</span> <span class="citation" data-cites="dempster1977">Dempster, Laird, and Rubin (<a href="#ref-dempster1977" role="doc-biblioref">1977</a>)</span></p></li>
+<li><p>For a parenthetical citation, put it in brackets: <code>[@dempster1977]</code> <span class="math inline">\(\rightarrow\)</span> <span class="citation" data-cites="dempster1977">(<a href="#ref-dempster1977" role="doc-biblioref">Dempster, Laird, and Rubin 1977</a>)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="parameterized-plot" class="level2">
+<h2>Parameterized Plot</h2>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(params)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$interactive
+[1] TRUE
+
+$year
+[1] 1962
+
+$plot_color
+[1] &quot;green&quot;
+
+$show_code
+[1] FALSE</code></pre>
+</div>
+</div>
+<p><strong>Treat <code>params</code> as a list, access with <code>params$___</code></strong></p>
+<ul>
+<li><p>Use <code>plot_color</code> for the color of the points in the plot</p></li>
+<li><p>Only plot data from specified <code>year</code></p></li>
+<li><p>Use <code>interactive</code> (logical) to determine whether to use <code>ggplotly</code></p></li>
+</ul>
+<p><strong>Tips:</strong></p>
+<ul>
+<li><p>If using parameters, make sure to <code>print(params)</code> so you know what you’re looking at later.</p></li>
+<li><p>If using parameters, change the <code>output-file</code> in the YAML as well so you don’t overwrite old reports.</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-72b8f2d17b863a5e4803" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-72b8f2d17b863a5e4803">{"x":{"data":[{"x":[853.10071,2312.888958,2550.81688,4269.276742,7133.166023,12217.22686,10750.72111,12753.27514,686.3415538,10991.20676,949.4990641,2180.972546,1709.683679,983.6539764,3336.585802,4254.337839,722.5120206,355.2032273,496.9136476,1399.607441,13462.48555,1193.068753,1389.817618,4519.094331,487.6740183,2492.351109,1406.648278,896.3146335,2464.783157,3460.937025,1728.869428,5477.890018,5180.75591,10136.86713,13583.31351,3020.989263,1662.137359,4086.114078,1693.335853,3776.803627,582.8419714,380.9958433,419.4564161,9371.842561,10560.48553,6631.459222,599.650276,12902.46291,1190.041118,6017.190733,2750.364446,686.3736739,522.0343725,1796.589032,2291.156835,4692.648272,7550.359877,10350.15906,658.3471509,849.2897701,4187.329802,8341.737815,6631.597314,7105.630706,8243.58234,5246.107524,6576.649461,2348.009158,896.9663732,1621.693598,1536.344387,95458.11176,5714.560611,411.8006266,634.1951625,6757.030816,1643.38711,427.9010856,2036.884944,496.1743428,1055.896036,2529.067487,4581.609385,1056.353958,4649.593785,1566.353493,556.6863539,388,3173.215595,652.3968593,12790.84956,13175.678,3634.364406,997.7661127,1150.927478,13450.40151,2924.638113,803.3427418,3536.540301,2148.027146,4957.037982,1649.552153,5338.752143,4727.954889,5108.34463,3173.72334,4734.997586,597.4730727,1071.551119,11626.41975,1654.988723,6289.629157,1116.639877,3674.735572,7481.107598,7402.303395,1369.488336,5768.729717,5693.843879,1074.47196,1959.593767,1856.182125,12329.44192,20431.0927,2193.037133,1822.879028,722.0038073,1002.199172,1067.53481,4997.523971,1660.30321,2322.869908,767.2717398,12477.17707,16173.14586,5603.357717,8422.974165,772.0491602,2198.956312,825.6232006,1452.725766,527.2721818],"y":[31.997,64.82,48.303,34,65.142,70.93,69.54,56.923,41.216,70.25,42.618,43.428,61.93,51.52,55.665,69.51,37.814,42.045,43.415,42.643,71.3,39.475,41.716,57.924,44.50136,57.863,44.467,42.122,48.435,62.842,44.93,67.13,65.246,69.9,72.35,39.693,53.459,54.64,46.992,52.307,37.485,40.158,40.059,68.75,70.51,40.489,33.896,70.3,46.452,69.51,46.954,35.753,34.488,43.59,48.041,67.65,67.96,73.68,43.605,42.518,49.325,51.457,70.29,69.39,69.24,65.61,68.73,48.126,47.949,56.656,55.292,60.47,62.094,47.747,40.502,47.808,40.848,38.41,55.737,36.936,44.248,60.246,58.299,48.251,63.728,47.924,36.161,45.108,48.386,39.393,73.23,71.24,48.632,39.487,39.36,73.47,43.165,47.67,61.817,64.361,49.096,54.757,67.64,64.39,69.62,57.666,66.8,43,51.893,45.914,41.454,64.531,32.767,65.798,70.33,69.15,36.981,49.951,69.69,62.192,40.87,44.992,73.37,71.32,50.305,65.2,44.246,56.061,43.922,64.9,49.579,52.098,45.344,70.76,70.21,68.253,60.77,45.363,48.127,35.18,46.023,52.358],"text":["gdpPercap:   853.1007<br />lifeExp: 31.99700<br />Country:  Afghanistan <br />Continent: Asia <br />Pop: 10267083","gdpPercap:  2312.8890<br />lifeExp: 64.82000<br />Country:  Albania <br />Continent: Europe <br />Pop: 1728137","gdpPercap:  2550.8169<br />lifeExp: 48.30300<br />Country:  Algeria <br />Continent: Africa <br />Pop: 11000948","gdpPercap:  4269.2767<br />lifeExp: 34.00000<br />Country:  Angola <br />Continent: Africa <br />Pop: 4826015","gdpPercap:  7133.1660<br />lifeExp: 65.14200<br />Country:  Argentina <br />Continent: Americas <br />Pop: 21283783","gdpPercap: 12217.2269<br />lifeExp: 70.93000<br />Country:  Australia <br />Continent: Oceania <br />Pop: 10794968","gdpPercap: 10750.7211<br />lifeExp: 69.54000<br />Country:  Austria <br />Continent: Europe <br />Pop: 7129864","gdpPercap: 12753.2751<br />lifeExp: 56.92300<br />Country:  Bahrain <br />Continent: Asia <br />Pop: 171863","gdpPercap:   686.3416<br />lifeExp: 41.21600<br />Country:  Bangladesh <br />Continent: Asia <br />Pop: 56839289","gdpPercap: 10991.2068<br />lifeExp: 70.25000<br />Country:  Belgium <br />Continent: Europe <br />Pop: 9218400","gdpPercap:   949.4991<br />lifeExp: 42.61800<br />Country:  Benin <br />Continent: Africa <br />Pop: 2151895","gdpPercap:  2180.9725<br />lifeExp: 43.42800<br />Country:  Bolivia <br />Continent: Americas <br />Pop: 3593918","gdpPercap:  1709.6837<br />lifeExp: 61.93000<br />Country:  Bosnia and Herzegovina <br />Continent: Europe <br />Pop: 3349000","gdpPercap:   983.6540<br />lifeExp: 51.52000<br />Country:  Botswana <br />Continent: Africa <br />Pop: 512764","gdpPercap:  3336.5858<br />lifeExp: 55.66500<br />Country:  Brazil <br />Continent: Americas <br />Pop: 76039390","gdpPercap:  4254.3378<br />lifeExp: 69.51000<br />Country:  Bulgaria <br />Continent: Europe <br />Pop: 8012946","gdpPercap:   722.5120<br />lifeExp: 37.81400<br />Country:  Burkina Faso <br />Continent: Africa <br />Pop: 4919632","gdpPercap:   355.2032<br />lifeExp: 42.04500<br />Country:  Burundi <br />Continent: Africa <br />Pop: 2961915","gdpPercap:   496.9136<br />lifeExp: 43.41500<br />Country:  Cambodia <br />Continent: Asia <br />Pop: 6083619","gdpPercap:  1399.6074<br />lifeExp: 42.64300<br />Country:  Cameroon <br />Continent: Africa <br />Pop: 5793633","gdpPercap: 13462.4855<br />lifeExp: 71.30000<br />Country:  Canada <br />Continent: Americas <br />Pop: 18985849","gdpPercap:  1193.0688<br />lifeExp: 39.47500<br />Country:  Central African Republic <br />Continent: Africa <br />Pop: 1523478","gdpPercap:  1389.8176<br />lifeExp: 41.71600<br />Country:  Chad <br />Continent: Africa <br />Pop: 3150417","gdpPercap:  4519.0943<br />lifeExp: 57.92400<br />Country:  Chile <br />Continent: Americas <br />Pop: 7961258","gdpPercap:   487.6740<br />lifeExp: 44.50136<br />Country:  China <br />Continent: Asia <br />Pop: 665770000","gdpPercap:  2492.3511<br />lifeExp: 57.86300<br />Country:  Colombia <br />Continent: Americas <br />Pop: 17009885","gdpPercap:  1406.6483<br />lifeExp: 44.46700<br />Country:  Comoros <br />Continent: Africa <br />Pop: 191689","gdpPercap:   896.3146<br />lifeExp: 42.12200<br />Country:  Congo, Dem. Rep. <br />Continent: Africa <br />Pop: 17486434","gdpPercap:  2464.7832<br />lifeExp: 48.43500<br />Country:  Congo, Rep. <br />Continent: Africa <br />Pop: 1047924","gdpPercap:  3460.9370<br />lifeExp: 62.84200<br />Country:  Costa Rica <br />Continent: Americas <br />Pop: 1345187","gdpPercap:  1728.8694<br />lifeExp: 44.93000<br />Country:  Cote d'Ivoire <br />Continent: Africa <br />Pop: 3832408","gdpPercap:  5477.8900<br />lifeExp: 67.13000<br />Country:  Croatia <br />Continent: Europe <br />Pop: 4076557","gdpPercap:  5180.7559<br />lifeExp: 65.24600<br />Country:  Cuba <br />Continent: Americas <br />Pop: 7254373","gdpPercap: 10136.8671<br />lifeExp: 69.90000<br />Country:  Czech Republic <br />Continent: Europe <br />Pop: 9620282","gdpPercap: 13583.3135<br />lifeExp: 72.35000<br />Country:  Denmark <br />Continent: Europe <br />Pop: 4646899","gdpPercap:  3020.9893<br />lifeExp: 39.69300<br />Country:  Djibouti <br />Continent: Africa <br />Pop: 89898","gdpPercap:  1662.1374<br />lifeExp: 53.45900<br />Country:  Dominican Republic <br />Continent: Americas <br />Pop: 3453434","gdpPercap:  4086.1141<br />lifeExp: 54.64000<br />Country:  Ecuador <br />Continent: Americas <br />Pop: 4681707","gdpPercap:  1693.3359<br />lifeExp: 46.99200<br />Country:  Egypt <br />Continent: Africa <br />Pop: 28173309","gdpPercap:  3776.8036<br />lifeExp: 52.30700<br />Country:  El Salvador <br />Continent: Americas <br />Pop: 2747687","gdpPercap:   582.8420<br />lifeExp: 37.48500<br />Country:  Equatorial Guinea <br />Continent: Africa <br />Pop: 249220","gdpPercap:   380.9958<br />lifeExp: 40.15800<br />Country:  Eritrea <br />Continent: Africa <br />Pop: 1666618","gdpPercap:   419.4564<br />lifeExp: 40.05900<br />Country:  Ethiopia <br />Continent: Africa <br />Pop: 25145372","gdpPercap:  9371.8426<br />lifeExp: 68.75000<br />Country:  Finland <br />Continent: Europe <br />Pop: 4491443","gdpPercap: 10560.4855<br />lifeExp: 70.51000<br />Country:  France <br />Continent: Europe <br />Pop: 47124000","gdpPercap:  6631.4592<br />lifeExp: 40.48900<br />Country:  Gabon <br />Continent: Africa <br />Pop: 455661","gdpPercap:   599.6503<br />lifeExp: 33.89600<br />Country:  Gambia <br />Continent: Africa <br />Pop: 374020","gdpPercap: 12902.4629<br />lifeExp: 70.30000<br />Country:  Germany <br />Continent: Europe <br />Pop: 73739117","gdpPercap:  1190.0411<br />lifeExp: 46.45200<br />Country:  Ghana <br />Continent: Africa <br />Pop: 7355248","gdpPercap:  6017.1907<br />lifeExp: 69.51000<br />Country:  Greece <br />Continent: Europe <br />Pop: 8448233","gdpPercap:  2750.3644<br />lifeExp: 46.95400<br />Country:  Guatemala <br />Continent: Americas <br />Pop: 4208858","gdpPercap:   686.3737<br />lifeExp: 35.75300<br />Country:  Guinea <br />Continent: Africa <br />Pop: 3140003","gdpPercap:   522.0344<br />lifeExp: 34.48800<br />Country:  Guinea-Bissau <br />Continent: Africa <br />Pop: 627820","gdpPercap:  1796.5890<br />lifeExp: 43.59000<br />Country:  Haiti <br />Continent: Americas <br />Pop: 3880130","gdpPercap:  2291.1568<br />lifeExp: 48.04100<br />Country:  Honduras <br />Continent: Americas <br />Pop: 2090162","gdpPercap:  4692.6483<br />lifeExp: 67.65000<br />Country:  Hong Kong, China <br />Continent: Asia <br />Pop: 3305200","gdpPercap:  7550.3599<br />lifeExp: 67.96000<br />Country:  Hungary <br />Continent: Europe <br />Pop: 10063000","gdpPercap: 10350.1591<br />lifeExp: 73.68000<br />Country:  Iceland <br />Continent: Europe <br />Pop: 182053","gdpPercap:   658.3472<br />lifeExp: 43.60500<br />Country:  India <br />Continent: Asia <br />Pop: 454000000","gdpPercap:   849.2898<br />lifeExp: 42.51800<br />Country:  Indonesia <br />Continent: Asia <br />Pop: 99028000","gdpPercap:  4187.3298<br />lifeExp: 49.32500<br />Country:  Iran <br />Continent: Asia <br />Pop: 22874000","gdpPercap:  8341.7378<br />lifeExp: 51.45700<br />Country:  Iraq <br />Continent: Asia <br />Pop: 7240260","gdpPercap:  6631.5973<br />lifeExp: 70.29000<br />Country:  Ireland <br />Continent: Europe <br />Pop: 2830000","gdpPercap:  7105.6307<br />lifeExp: 69.39000<br />Country:  Israel <br />Continent: Asia <br />Pop: 2310904","gdpPercap:  8243.5823<br />lifeExp: 69.24000<br />Country:  Italy <br />Continent: Europe <br />Pop: 50843200","gdpPercap:  5246.1075<br />lifeExp: 65.61000<br />Country:  Jamaica <br />Continent: Americas <br />Pop: 1665128","gdpPercap:  6576.6495<br />lifeExp: 68.73000<br />Country:  Japan <br />Continent: Asia <br />Pop: 95831757","gdpPercap:  2348.0092<br />lifeExp: 48.12600<br />Country:  Jordan <br />Continent: Asia <br />Pop: 933559","gdpPercap:   896.9664<br />lifeExp: 47.94900<br />Country:  Kenya <br />Continent: Africa <br />Pop: 8678557","gdpPercap:  1621.6936<br />lifeExp: 56.65600<br />Country:  Korea, Dem. Rep. <br />Continent: Asia <br />Pop: 10917494","gdpPercap:  1536.3444<br />lifeExp: 55.29200<br />Country:  Korea, Rep. <br />Continent: Asia <br />Pop: 26420307","gdpPercap: 95458.1118<br />lifeExp: 60.47000<br />Country:  Kuwait <br />Continent: Asia <br />Pop: 358266","gdpPercap:  5714.5606<br />lifeExp: 62.09400<br />Country:  Lebanon <br />Continent: Asia <br />Pop: 1886848","gdpPercap:   411.8006<br />lifeExp: 47.74700<br />Country:  Lesotho <br />Continent: Africa <br />Pop: 893143","gdpPercap:   634.1952<br />lifeExp: 40.50200<br />Country:  Liberia <br />Continent: Africa <br />Pop: 1112796","gdpPercap:  6757.0308<br />lifeExp: 47.80800<br />Country:  Libya <br />Continent: Africa <br />Pop: 1441863","gdpPercap:  1643.3871<br />lifeExp: 40.84800<br />Country:  Madagascar <br />Continent: Africa <br />Pop: 5703324","gdpPercap:   427.9011<br />lifeExp: 38.41000<br />Country:  Malawi <br />Continent: Africa <br />Pop: 3628608","gdpPercap:  2036.8849<br />lifeExp: 55.73700<br />Country:  Malaysia <br />Continent: Asia <br />Pop: 8906385","gdpPercap:   496.1743<br />lifeExp: 36.93600<br />Country:  Mali <br />Continent: Africa <br />Pop: 4690372","gdpPercap:  1055.8960<br />lifeExp: 44.24800<br />Country:  Mauritania <br />Continent: Africa <br />Pop: 1146757","gdpPercap:  2529.0675<br />lifeExp: 60.24600<br />Country:  Mauritius <br />Continent: Africa <br />Pop: 701016","gdpPercap:  4581.6094<br />lifeExp: 58.29900<br />Country:  Mexico <br />Continent: Americas <br />Pop: 41121485","gdpPercap:  1056.3540<br />lifeExp: 48.25100<br />Country:  Mongolia <br />Continent: Asia <br />Pop: 1010280","gdpPercap:  4649.5938<br />lifeExp: 63.72800<br />Country:  Montenegro <br />Continent: Europe <br />Pop: 474528","gdpPercap:  1566.3535<br />lifeExp: 47.92400<br />Country:  Morocco <br />Continent: Africa <br />Pop: 13056604","gdpPercap:   556.6864<br />lifeExp: 36.16100<br />Country:  Mozambique <br />Continent: Africa <br />Pop: 7788944","gdpPercap:   388.0000<br />lifeExp: 45.10800<br />Country:  Myanmar <br />Continent: Asia <br />Pop: 23634436","gdpPercap:  3173.2156<br />lifeExp: 48.38600<br />Country:  Namibia <br />Continent: Africa <br />Pop: 621392","gdpPercap:   652.3969<br />lifeExp: 39.39300<br />Country:  Nepal <br />Continent: Asia <br />Pop: 10332057","gdpPercap: 12790.8496<br />lifeExp: 73.23000<br />Country:  Netherlands <br />Continent: Europe <br />Pop: 11805689","gdpPercap: 13175.6780<br />lifeExp: 71.24000<br />Country:  New Zealand <br />Continent: Oceania <br />Pop: 2488550","gdpPercap:  3634.3644<br />lifeExp: 48.63200<br />Country:  Nicaragua <br />Continent: Americas <br />Pop: 1590597","gdpPercap:   997.7661<br />lifeExp: 39.48700<br />Country:  Niger <br />Continent: Africa <br />Pop: 4076008","gdpPercap:  1150.9275<br />lifeExp: 39.36000<br />Country:  Nigeria <br />Continent: Africa <br />Pop: 41871351","gdpPercap: 13450.4015<br />lifeExp: 73.47000<br />Country:  Norway <br />Continent: Europe <br />Pop: 3638919","gdpPercap:  2924.6381<br />lifeExp: 43.16500<br />Country:  Oman <br />Continent: Asia <br />Pop: 628164","gdpPercap:   803.3427<br />lifeExp: 47.67000<br />Country:  Pakistan <br />Continent: Asia <br />Pop: 53100671","gdpPercap:  3536.5403<br />lifeExp: 61.81700<br />Country:  Panama <br />Continent: Americas <br />Pop: 1215725","gdpPercap:  2148.0271<br />lifeExp: 64.36100<br />Country:  Paraguay <br />Continent: Americas <br />Pop: 2009813","gdpPercap:  4957.0380<br />lifeExp: 49.09600<br />Country:  Peru <br />Continent: Americas <br />Pop: 10516500","gdpPercap:  1649.5522<br />lifeExp: 54.75700<br />Country:  Philippines <br />Continent: Asia <br />Pop: 30325264","gdpPercap:  5338.7521<br />lifeExp: 67.64000<br />Country:  Poland <br />Continent: Europe <br />Pop: 30329617","gdpPercap:  4727.9549<br />lifeExp: 64.39000<br />Country:  Portugal <br />Continent: Europe <br />Pop: 9019800","gdpPercap:  5108.3446<br />lifeExp: 69.62000<br />Country:  Puerto Rico <br />Continent: Americas <br />Pop: 2448046","gdpPercap:  3173.7233<br />lifeExp: 57.66600<br />Country:  Reunion <br />Continent: Africa <br />Pop: 358900","gdpPercap:  4734.9976<br />lifeExp: 66.80000<br />Country:  Romania <br />Continent: Europe <br />Pop: 18680721","gdpPercap:   597.4731<br />lifeExp: 43.00000<br />Country:  Rwanda <br />Continent: Africa <br />Pop: 3051242","gdpPercap:  1071.5511<br />lifeExp: 51.89300<br />Country:  Sao Tome and Principe <br />Continent: Africa <br />Pop: 65345","gdpPercap: 11626.4197<br />lifeExp: 45.91400<br />Country:  Saudi Arabia <br />Continent: Asia <br />Pop: 4943029","gdpPercap:  1654.9887<br />lifeExp: 41.45400<br />Country:  Senegal <br />Continent: Africa <br />Pop: 3430243","gdpPercap:  6289.6292<br />lifeExp: 64.53100<br />Country:  Serbia <br />Continent: Europe <br />Pop: 7616060","gdpPercap:  1116.6399<br />lifeExp: 32.76700<br />Country:  Sierra Leone <br />Continent: Africa <br />Pop: 2467895","gdpPercap:  3674.7356<br />lifeExp: 65.79800<br />Country:  Singapore <br />Continent: Asia <br />Pop: 1750200","gdpPercap:  7481.1076<br />lifeExp: 70.33000<br />Country:  Slovak Republic <br />Continent: Europe <br />Pop: 4237384","gdpPercap:  7402.3034<br />lifeExp: 69.15000<br />Country:  Slovenia <br />Continent: Europe <br />Pop: 1582962","gdpPercap:  1369.4883<br />lifeExp: 36.98100<br />Country:  Somalia <br />Continent: Africa <br />Pop: 3080153","gdpPercap:  5768.7297<br />lifeExp: 49.95100<br />Country:  South Africa <br />Continent: Africa <br />Pop: 18356657","gdpPercap:  5693.8439<br />lifeExp: 69.69000<br />Country:  Spain <br />Continent: Europe <br />Pop: 31158061","gdpPercap:  1074.4720<br />lifeExp: 62.19200<br />Country:  Sri Lanka <br />Continent: Asia <br />Pop: 10421936","gdpPercap:  1959.5938<br />lifeExp: 40.87000<br />Country:  Sudan <br />Continent: Africa <br />Pop: 11183227","gdpPercap:  1856.1821<br />lifeExp: 44.99200<br />Country:  Swaziland <br />Continent: Africa <br />Pop: 370006","gdpPercap: 12329.4419<br />lifeExp: 73.37000<br />Country:  Sweden <br />Continent: Europe <br />Pop: 7561588","gdpPercap: 20431.0927<br />lifeExp: 71.32000<br />Country:  Switzerland <br />Continent: Europe <br />Pop: 5666000","gdpPercap:  2193.0371<br />lifeExp: 50.30500<br />Country:  Syria <br />Continent: Asia <br />Pop: 4834621","gdpPercap:  1822.8790<br />lifeExp: 65.20000<br />Country:  Taiwan <br />Continent: Asia <br />Pop: 11918938","gdpPercap:   722.0038<br />lifeExp: 44.24600<br />Country:  Tanzania <br />Continent: Africa <br />Pop: 10863958","gdpPercap:  1002.1992<br />lifeExp: 56.06100<br />Country:  Thailand <br />Continent: Asia <br />Pop: 29263397","gdpPercap:  1067.5348<br />lifeExp: 43.92200<br />Country:  Togo <br />Continent: Africa <br />Pop: 1528098","gdpPercap:  4997.5240<br />lifeExp: 64.90000<br />Country:  Trinidad and Tobago <br />Continent: Americas <br />Pop: 887498","gdpPercap:  1660.3032<br />lifeExp: 49.57900<br />Country:  Tunisia <br />Continent: Africa <br />Pop: 4286552","gdpPercap:  2322.8699<br />lifeExp: 52.09800<br />Country:  Turkey <br />Continent: Europe <br />Pop: 29788695","gdpPercap:   767.2717<br />lifeExp: 45.34400<br />Country:  Uganda <br />Continent: Africa <br />Pop: 7688797","gdpPercap: 12477.1771<br />lifeExp: 70.76000<br />Country:  United Kingdom <br />Continent: Europe <br />Pop: 53292000","gdpPercap: 16173.1459<br />lifeExp: 70.21000<br />Country:  United States <br />Continent: Americas <br />Pop: 186538000","gdpPercap:  5603.3577<br />lifeExp: 68.25300<br />Country:  Uruguay <br />Continent: Americas <br />Pop: 2598466","gdpPercap:  8422.9742<br />lifeExp: 60.77000<br />Country:  Venezuela <br />Continent: Americas <br />Pop: 8143375","gdpPercap:   772.0492<br />lifeExp: 45.36300<br />Country:  Vietnam <br />Continent: Asia <br />Pop: 33796140","gdpPercap:  2198.9563<br />lifeExp: 48.12700<br />Country:  West Bank and Gaza <br />Continent: Asia <br />Pop: 1133134","gdpPercap:   825.6232<br />lifeExp: 35.18000<br />Country:  Yemen, Rep. <br />Continent: Asia <br />Pop: 6120081","gdpPercap:  1452.7258<br />lifeExp: 46.02300<br />Country:  Zambia <br />Continent: Africa <br />Pop: 3421000","gdpPercap:   527.2722<br />lifeExp: 52.35800<br />Country:  Zimbabwe <br />Continent: Africa <br />Pop: 4277736"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,255,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":46.2864259028643,"r":7.97011207970112,"b":43.8356164383562,"l":40.6475716064757},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.9402241594022},"title":{"text":"Year: 1962","font":{"color":"rgba(0,0,0,1)","family":"","size":19.1282689912827},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-4399.942199335,100213.257186635],"tickmode":"array","ticktext":["0","25000","50000","75000","100000"],"tickvals":[0,25000,50000,75000,100000],"categoryorder":"array","categoryarray":["0","25000","50000","75000","100000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(77,77,77,1)","ticklen":3.98505603985056,"tickwidth":0.724555643609193,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":12.7521793275218},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"gdpPercap","font":{"color":"rgba(0,0,0,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[29.91285,75.76415],"tickmode":"array","ticktext":["30","40","50","60","70"],"tickvals":[30,40,50,60,70],"categoryorder":"array","categoryarray":["30","40","50","60","70"],"nticks":null,"ticks":"outside","tickcolor":"rgba(77,77,77,1)","ticklen":3.98505603985056,"tickwidth":0.724555643609193,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":12.7521793275218},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"lifeExp","font":{"color":"rgba(0,0,0,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(77,77,77,1)","width":0.724555643609193,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":2.06156048675734,"font":{"color":"rgba(0,0,0,1)","family":"","size":12.7521793275218}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"8bee77d863ab":{"x":{},"y":{},"text":{},"type":"scatter"}},"cur_data":"8bee77d863ab","visdat":{"8bee77d863ab":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="parameterized-analysis" class="level2">
+<h2>Parameterized Analysis</h2>
+<p>A linear model of life expectancy as a function of GDP per capita in the year 1962:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = lifeExp ~ gdpPercap, data = gapminder %&gt;% filter(year == 
+    params$year))
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-41.669  -8.728  -2.893  11.640  17.062 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 5.108e+01  1.073e+00  47.621  &lt; 2e-16 ***
+gdpPercap   5.349e-04  1.090e-04   4.909 2.51e-06 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 11.21 on 140 degrees of freedom
+Multiple R-squared:  0.1469,    Adjusted R-squared:  0.1408 
+F-statistic:  24.1 on 1 and 140 DF,  p-value: 2.511e-06</code></pre>
+</div>
+</div>
+</section>
+<section id="tabs-for-multiple-tables" class="level2">
+<h2>Tabs for Multiple Tables</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Full Table</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Stratified Table</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                       
+                        Overall                   
+  n                            1704               
+  continent (%)                                   
+     Africa                     624 (36.6)        
+     Americas                   300 (17.6)        
+     Asia                       396 (23.2)        
+     Europe                     360 (21.1)        
+     Oceania                     24 ( 1.4)        
+  lifeExp (mean (SD))         59.47 (12.92)       
+  pop (mean (SD))       29601212.32 (106157896.74)
+  gdpPercap (mean (SD))     7215.33 (9857.45)     </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                       Stratified by continent
+                        Africa                   Americas                 
+  n                            624                       300              
+  lifeExp (mean (SD))        48.87 (9.15)              64.66 (9.35)       
+  pop (mean (SD))       9916003.14 (15490923.32) 24504795.00 (50979430.20)
+  gdpPercap (mean (SD))    2193.75 (2827.93)         7136.11 (6396.76)    
+                       Stratified by continent
+                        Asia                       Europe                   
+  n                             396                        360              
+  lifeExp (mean (SD))         60.06 (11.86)              71.90 (5.43)       
+  pop (mean (SD))       77038721.97 (206885204.62) 17169764.73 (20519437.65)
+  gdpPercap (mean (SD))     7902.15 (14045.37)        14469.48 (9355.21)    
+                       Stratified by continent
+                        Oceania                 p      test
+  n                             24                         
+  lifeExp (mean (SD))        74.33 (3.80)       &lt;0.001     
+  pop (mean (SD))       8874672.33 (6506342.47) &lt;0.001     
+  gdpPercap (mean (SD))   18621.61 (6358.98)    &lt;0.001     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Reports and Themes</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Reports and Themes</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metatitle">Reports and Themes</span> <span class="hidden" data-render-id="quarto-twittercardtitle">Reports and Themes</span> <span class="hidden" data-render-id="quarto-ogcardtitle">Reports and Themes</span></p>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-dempster1977" class="csl-entry" role="doc-biblioentry">
+Dempster, A. P., N. M. Laird, and D. B. Rubin. 1977. <span>“Maximum Likelihood from Incomplete Data Via the<span><em>EM</em></span>Algorithm.”</span> <em>Journal of the Royal Statistical Society: Series B (Methodological)</em> 39 (1): 1–22. <a href="https://doi.org/10.1111/j.2517-6161.1977.tb01600.x">https://doi.org/10.1111/j.2517-6161.1977.tb01600.x</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id = "quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+</body>
+
+</html>

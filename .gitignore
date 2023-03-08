@@ -1,0 +1,6 @@
+.Rhistory
+*.Rproj
+Notes
+.Rproj.user/
+/.quarto/
+*files/
