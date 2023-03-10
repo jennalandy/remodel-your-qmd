@@ -1,0 +1,16 @@
+---
+title: "More Resources"
+editor: visual
+---
+
+Quarto has [great documentation](https://quarto.org/docs/guide/) Here are a few topics that I find useful:
+
+-   Here's a list of [other format options](https://quarto.org/docs/reference/formats/html.html) for HTML reports
+
+-   Here's how to create a [website with quarto](https://quarto.org/docs/websites/) like I did with these materials
+
+    -   And then how to [make it public with GitHub pages](https://quarto.org/docs/publishing/github-pages.html)
+
+-   Here's how to create a [book with quarto](https://quarto.org/docs/books/)
+
+-   Here's how to build a \[blog with quarto\]

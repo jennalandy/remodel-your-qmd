@@ -1,0 +1,71 @@
+---
+title: "Parameterized Documents"
+editor: visual
+echo: false
+params:
+  interactive: TRUE
+  year: 2007
+  plot_color: 'pink'
+  show_code: FALSE
+# output-file: "Report_2007_pink.html"
+---
+
+```{r message = FALSE}
+library(gapminder) # provides gapminder dataset
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(plotly) # for interactive plots
+```
+
+## Parameters
+
+**Treat `params` as a list, access with `params$___`**
+
+-   Use `plot_color` for the color of the points in the plot
+
+-   Only plot data from specified `year`
+
+-   Use `interactive` (logical) to determine whether to use `ggplotly`
+
+**Tips:**
+
+-   If using parameters, make sure to `print(params)` so you know what you're looking at later.
+
+-   If using parameters, change the `output-file` in the YAML as well so you don't overwrite old reports.
+
+```{r echo = TRUE}
+print(params)
+```
+
+## Parameterized Plot
+
+```{r}
+plot = gapminder %>%
+  dplyr::filter(year == params$year) %>%
+  ggplot(aes(
+    x = gdpPercap, y = lifeExp, 
+    text = paste('Country: ',country, '\nContinent:', continent, '\nPop:', pop)
+  )) +
+  geom_point(color = params$plot_color) +
+  ggtitle(paste('Year:', params$year)) +
+  ggthemes::theme_few()
+
+if (params$interactive) {
+  plotly::ggplotly(plot)
+} else {
+  plot
+}
+```
+
+## Parameterized Analysis
+
+A linear model of life expectancy as a function of GDP per capita in the year `r params$year`:
+
+```{r}
+lm(
+  lifeExp ~ gdpPercap, 
+  data = gapminder %>% filter(year == params$year)
+) %>%
+  summary()
+```

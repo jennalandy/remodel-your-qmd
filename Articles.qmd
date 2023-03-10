@@ -4,7 +4,7 @@ title: "Writing Articles with Quarto"
 
 ## Setting Up Template
 
-Quarto provides [templates](https://quarto.org/docs/journals/) for many popular journals (PLOS, ASA, Elsevier, ...).
+You can find [templates made by quarto](https://quarto.org/docs/journals/) and [others](https://quarto.org/docs/extensions/listing-journals.html) for many popular journals (PLOS, ASA, Elsevier, ...).
 
 1.  Set up a article with a journal template in your terminal:
 
@@ -34,4 +34,4 @@ If you use Quarto in your everyday research workflow, it will be a quick transit
 
 ## Preview the Final Product
 
-The article I created from the template can be previewed [here](https://github.com/jennalandy/remodel-your-qmd/blob/master/my_elsevier_article/my_elsevier_article.pdf).
+Click "Render" in Rstudio. The article I created from the template can be previewed [here](https://github.com/jennalandy/remodel-your-qmd/blob/master/my_elsevier_article/my_elsevier_article.pdf).

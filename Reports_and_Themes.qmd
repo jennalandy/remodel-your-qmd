@@ -1,126 +1,37 @@
 ---
-title: "Reports and Themes"
+title: "Pretty Reports"
 format: html
 editor: visual
 toc: true
 theme: united
 bibliography: references.bib
-params:
-  interactive: TRUE
-  year: 2007
-  plot_color: 'pink'
-  show_code: FALSE
-# output-file: "Report_2007_pink.html"
+echo: false
 ---
-
-```{r include = FALSE}
-knitr::opts_chunk$set(echo = params$show_code)
-```
 
 ```{r message = FALSE}
 library(gapminder) # provides gapminder dataset
 library(tidyverse)
-library(ggplot2)
-library(ggthemes)
 
-library(plotly) # for interactive plots
-library(gganimate) # for animated plots
 library(knitr) # for kable tables
 library(kableExtra) # for even prettier kable tables
 library(tableone) # for baseline characteristics table
 ```
 
-## Themes
+## Hide Code
 
--   This document uses the `united` theme, specified by `theme: united` in the YAML
-
--   [quarto themes](https://quarto.org/docs/output-formats/html-themes.html) to change the style of your report.
-
--   [other format options](https://quarto.org/docs/reference/formats/html.html) for HTML reports.
+-   Make your report easier to read! Hide all code with `echo: false` in the YAML
 
 ## Table of Contents
 
 -   Make your report easier to navigate with one line! Add `toc: true` in YAML.
 
-## Quick and Easy Citations
+## Themes
 
-#### Benefits
+-   This document uses the `united` theme, specified by `theme: united` in the YAML
 
--   No switching between your document and the `.bib` file
+-   Here's a list of [quarto themes](https://quarto.org/docs/output-formats/html-themes.html) to change the style of your report.
 
--   No searching for `bibTex` citations to copy and paste
-
-#### Creating A Bibtex Citation
-
-1.  To cite [this paper](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1977.tb01600.x), we can copy the doi (number or full link), and paste it in following an `@` sign
-
-    `@10.1111/j.2517-6161.1977.tb01600.x`
-
-2.  You'll see a pop-up window like this:
-
-    ![](images/image-1597336925.png){width="318"}
-
-3.  Quarto turns it into this: `@dempster1977`
-
-4.  Quarto also adds `bibliography: references.bib` to YAML
-
-#### Citing in Your Report
-
--   For an in-text citation, leave it as is: `@dempster1977` $\rightarrow$ @dempster1977
-
--   For a parenthetical citation, put it in brackets: `[@dempster1977]` $\rightarrow$ [@dempster1977]
-
-## Parameterized Plot
-
-```{r echo = TRUE}
-print(params)
-```
-
-**Treat `params` as a list, access with `params$___`**
-
--   Use `plot_color` for the color of the points in the plot
-
--   Only plot data from specified `year`
-
--   Use `interactive` (logical) to determine whether to use `ggplotly`
-
-**Tips:**
-
--   If using parameters, make sure to `print(params)` so you know what you're looking at later.
-
--   If using parameters, change the `output-file` in the YAML as well so you don't overwrite old reports.
-
-```{r}
-plot = gapminder %>%
-  dplyr::filter(year == params$year) %>%
-  ggplot(aes(
-    x = gdpPercap, y = lifeExp, 
-    text = paste('Country: ',country, '\nContinent:', continent, '\nPop:', pop)
-  )) +
-  geom_point(color = params$plot_color) +
-  ggtitle(paste('Year:', params$year)) +
-  ggthemes::theme_few()
-
-if (params$interactive) {
-  plotly::ggplotly(plot)
-} else {
-  plot
-}
-```
-
-## Parameterized Analysis
-
-A linear model of life expectancy as a function of GDP per capita in the year `r params$year`:
-
-```{r}
-lm(
-  lifeExp ~ gdpPercap, 
-  data = gapminder %>% filter(year == params$year)
-) %>%
-  summary()
-```
-
-## Tabs for Multiple Tables
+## Tabs
 
 ::: panel-tabset
 ## Full Table
@@ -146,3 +57,31 @@ tab2 = tableone::CreateTableOne(
 tab2
 ```
 :::
+
+## Citations
+
+**Benefits**
+
+-   No switching between your document and the `.bib` file
+
+-   No searching for `bibTex` citations to copy and paste
+
+**Creating A Bibtex Citation**
+
+1.  To cite [this paper](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1977.tb01600.x), we can copy the doi (number or full link), and paste it in following an `@` sign
+
+    `@10.1111/j.2517-6161.1977.tb01600.x`
+
+2.  You'll see a pop-up window like this:
+
+    ![](images/image-1597336925.png){width="318"}
+
+3.  Quarto turns it into this: `@dempster1977`
+
+4.  Quarto also adds `bibliography: references.bib` to YAML
+
+**Citing in Your Report**
+
+-   For an in-text citation, leave it as is: `@dempster1977` $\rightarrow$ @dempster1977
+
+-   For a parenthetical citation, put it in brackets: `[@dempster1977]` $\rightarrow$ [@dempster1977]

@@ -18,10 +18,14 @@ book:
     - Tables_and_Plots.qmd
     - Reports_and_Themes.qmd
     - Articles.qmd
+    - part: More.qmd
+      chapters:
+      - Parameterized.qmd
 
 format:
   html:
-    theme: journal
+    theme: united
     number-sections: true
+    number-depth: 2
     toc: true
     fontsize: 14px
