@@ -3,4 +3,5 @@
 Notes
 .Rproj.user/
 /.quarto/
-*files/
+*.DS_Store
+.DS_Store
