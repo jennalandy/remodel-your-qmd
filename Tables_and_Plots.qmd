@@ -101,21 +101,21 @@ gapminder %>%
     write.csv(tab2_mat, file = "myTableOne.csv")
     ```
 
-4.   Display Table with kableExtra
-
-    ```{r}
-    tab2_mat %>%
-      kableExtra::kbl() %>%
-      kableExtra::kable_paper(
-        "hover"
-      )
-    ```
-
-5.  Copy Table into LaTeX document
+4.  Copy Table into LaTeX document (need to run in Console)
 
     ```{r}
     knitr::kable(tab2_mat, format = 'latex')
     ```
+
+### Combining Kable and TableOne
+
+```{r}
+tab2_mat %>%
+  kableExtra::kbl() %>%
+  kableExtra::kable_paper(
+    "hover"
+  )
+```
 
 ## Figures
 
