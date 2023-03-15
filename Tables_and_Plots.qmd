@@ -35,7 +35,7 @@ gapminder %>%
   dplyr::summarize_all(mean)
 ```
 
-### Kable tables
+### [Kable tables](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
 
 1.  Bootstrap Theme
 
@@ -66,7 +66,7 @@ gapminder %>%
       )
     ```
 
-### Table One
+### [Table One](https://ehsanx.github.io/intro2R/data-summary-with-tableone.html)
 
 1.  Basic Baseline Characteristics
 
@@ -121,7 +121,7 @@ tab2_mat %>%
 
 This example builds upon one on the [gganimate website](https://gganimate.com/)
 
-### `ggplot` plot: we can't tell which year is which!
+### [ggplot](https://ggplot2-book.org/introduction.html): we can't tell which year is which!
 
 ```{r}
 plot1 = ggplot2::ggplot(
@@ -147,7 +147,7 @@ plot1 = ggplot2::ggplot(
 plot1
 ```
 
-### `plotly`: we can hover to identify points for each country/year
+### [plotly](https://plotly.com/r/): we can hover to identify points for each country/year
 
 **Note**: Only variables in `aes()` show up in the tooltip by default. A trick I used here is to add a `text` aesthetic to add the year to the tooltip.
 
@@ -155,7 +155,7 @@ plot1
 plotly::ggplotly(plot1)
 ```
 
-### `gganimate`: visually see data move over the years
+### [gganimate](https://gganimate.com/): visually see data move over the years
 
 **Basics of `gganimate`**:
 
