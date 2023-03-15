@@ -13,4 +13,6 @@ Quarto has [great documentation](https://quarto.org/docs/guide/) Here are a few 
 
 -   Here's how to create a [book with quarto](https://quarto.org/docs/books/)
 
--   Here's how to build a \[blog with quarto\]
+-   Here's how to build a [blog with quarto](https://quarto.org/docs/websites/website-blog.html)
+
+-   Here's how to make [slideshows with quarto](https://quarto.org/docs/presentations/)

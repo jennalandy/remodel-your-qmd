@@ -30,6 +30,8 @@ When writing your article in Qaurto, you can use
 
 -   **R code to include plots and tables**
 
+-   [cross reference](https://quarto.org/docs/authoring/cross-references.html) images, tables, and plots
+
 If you use Quarto in your everyday research workflow, it will be a quick transition to writing a paper with Quarto.
 
 ## Preview the Final Product

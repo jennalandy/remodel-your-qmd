@@ -94,14 +94,24 @@ gapminder %>%
     tab2
     ```
 
-3.  Save Table
+3.  Save Table to CSV
 
     ```{r}
     tab2_mat = print(tab2, quote = FALSE, nospaces = TRUE, printToggle = FALSE)
     write.csv(tab2_mat, file = "myTableOne.csv")
     ```
 
-4.  Copy Table into LaTeX document
+4.   Display Table with kableExtra
+
+    ```{r}
+    tab2_mat %>%
+      kableExtra::kbl() %>%
+      kableExtra::kable_paper(
+        "hover"
+      )
+    ```
+
+5.  Copy Table into LaTeX document
 
     ```{r}
     knitr::kable(tab2_mat, format = 'latex')
@@ -158,9 +168,7 @@ Note: you need to install `gifski` and `png` packages before running the code be
 ```{r}
 plot1 +
   transition_time(year) +
-  ease_aes('linear') +
   labs(
     title = 'Year: {frame_time}'
   )
 ```
-
