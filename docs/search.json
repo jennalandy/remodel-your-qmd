@@ -81,7 +81,7 @@
     "href": "Articles.html#writing-your-article",
     "title": "4  Writing Articles with Quarto",
     "section": "4.2 Writing Your Article",
-    "text": "4.2 Writing Your Article\nWhen writing your article in Qaurto, you can use\n\nmarkdown (headers with #, bold with **, italics with *, etc.)\ncitations and cross references (with @)\nLaTeX formulas (with single or double dollar signs $$)\nR code to include plots and tables\ncross reference images, tables, and plots\n\nIf you use Quarto in your everyday research workflow, it will be a quick transition to writing a paper with Quarto."
+    "text": "4.2 Writing Your Article\nWhen writing your article in Qaurto, you can use\n\nmarkdown (headers with #, bold with **, italics with *, etc.)\ncitations and cross references (with @)\nLaTeX formulas (with single or double dollar signs $$)\nR code to include plots and tables\n\nIf you use Quarto in your everyday research workflow, it will be a quick transition to writing a paper with Quarto."
   },
   {
     "objectID": "Articles.html#preview-the-final-product",
